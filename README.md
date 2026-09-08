@@ -1,21 +1,34 @@
-# Proyecto-Trazabildad-Municipal
-# Contexto del  Proyecto
-Se me pide desarrollar un proyecto Aplicando AI-DLC de un sistema de apoyo a la decision socioambiental para el oriente boliviano(Tema: Trazabilidad de Tramites Municipales)
+# Proyecto: Trazabilidad de Trámites Municipales
 
-# Stack Tecnologico
-- Frontend y FrameWork Base
-  - Framework Next.js (App Router)
-  - Lenguaje TypeScript
-  - Utilizando UI: Tailwind CSS
-  - Gestion de Formulario: React Hook Form
-- Backend y Logico de Negocio (Integrado en Next.js)
-  - Api y Logica: Server Actiones(Next.js) , Prisma (ORM)
-  - Base de Datos: PostgreSQL(Supabase)
-- Base de Datos & Backend-as-a-Service (Supabase)
-    - Base de Datos Relacional: PostgreSQL (Proporcionado por Supabase). Perfecto para mantener la integridad de los datos de los trámites (evita registros huérfanos)
-    - Autenticación: Supabase Auth. Gestiona el inicio de sesión de ciudadanos (vía email, Google) y de funcionarios municipales (con roles específicos)
-    - Almacenamiento (Storage): Supabase Storage (Buckets S3). Aquí se guardarán los documentos adjuntos a los trámites (PDFs de identidad, formularios escaneados)
-    - Tiempo Real (Opcional): Supabase Realtime. Útil si quieres que el tablero del funcionario se actualice automáticamente cuando un ciudadano envíe un nuevo trámite
-# Despliegue 
-  - Alojamiento (Hosting): Vercel. Despliegue continuo automático conectado a tu repositorio de GitHub
-  - Control de Versiones: Git & GitHub
+## Contexto del Proyecto
+
+Desarrollo de un sistema de apoyo a la decisión socioambiental para el oriente boliviano enfocado en la **Trazabilidad de Trámites Municipales**, aplicando el ciclo de vida **AI-DLC** (*Artificial Intelligence - Development Life Cycle*).
+
+---
+
+## Stack Tecnológico
+
+El proyecto está construido sobre una arquitectura full-stack moderna y desacoplada, utilizando **Next.js** como núcleo de aplicación y **Supabase** como plataforma de backend y persistencia.
+
+### 1. Frontend & Framework Base
+- **Framework:** [Next.js](https://nextjs.org/) (App Router).
+- **Lenguaje:** [TypeScript](https://www.typescriptlang.org/) (Tipado estático de extremo a extremo).
+- **Diseño & UI:** [Tailwind CSS](https://tailwindcss.com/) (Estilos utilitarios responsivos y modulares).
+- **Gestión de Formularios:** [React Hook Form](https://react-hook-form.com/) (Manejo eficiente y validación de formularios de trámites).
+
+### 2. Backend & Lógica de Negocio
+- **API & Mutaciones:** Server Actions de Next.js (Lógica de servidor integrada y segura).
+- **ORM:** [Prisma](https://www.prisma.io/) (Modelado de datos, migraciones y tipado de consultas a base de datos).
+
+### 3. Persistencia & Servicios Cloud (Supabase)
+- **Base de Datos Relacional:** [PostgreSQL](https://www.postgresql.org/) (Alojado en Supabase; garantiza consistencia ACID e integridad referencial en trámites).
+- **Autenticación & Autorización:** Supabase Auth (Control de acceso basado en roles para ciudadanos y funcionarios municipales vía email o proveedores OAuth).
+- **Almacenamiento de Archivos (Storage):** Supabase Storage (Buckets compatibles con S3 para digitalización de requisitos y documentos adjuntos en PDF/imágenes).
+- **Sincronización en Tiempo Real:** Supabase Realtime (Actualizaciones en vivo para tableros de control y seguimiento de estados de trámites).
+
+---
+
+## Infraestructura & Despliegue
+
+- **Control de Versiones:** Git & [GitHub](https://github.com/) (Gestión de código fuente y flujo de trabajo colaborativo).
+- **Alojamiento (Hosting & CI/CD):** [Vercel](https://vercel.com/) (Despliegue continuo automático integrado al repositorio de GitHub).
