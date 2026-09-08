@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum EstadoTramite {
+  pendiente
+  en_revision
+  aprobado
+  rechazado
+}
+
+model User {
+  id       String    @id @default(uuid())
+  email    String    @unique
+  rol      String
+  tramites Tramite[]
+}
+
+model Tramite {
+  id        String        @id @default(uuid())
+  titulo    String
+  estado    EstadoTramite @default(pendiente)
+  userId    String
+  createdAt DateTime      @default(now())
+
+  user      User          @relation(fields: [userId], references: [id])
+}
